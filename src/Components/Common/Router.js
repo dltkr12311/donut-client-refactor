@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import IntroPage from "../../Pages/IntroPage";
@@ -6,6 +7,7 @@ import MyListPage from "../../Pages/MyListPage";
 import LocatePage from "../../Pages/LocatePage";
 import LoginPage from "../../Pages/LoginPage";
 import RegisterPage from "../../Pages/RegisterPage";
+
 
 export default () => (
   <Router>
@@ -16,8 +18,9 @@ export default () => (
         <Route path="/signin" component={LoginPage} />
         <Route path="/signup" component={RegisterPage} />
         <Route path="/mylist" component={MyListPage} />
-        <Route path="/mypage" />
         <Route path="/locate" component={LocatePage} />
+        <Route path="/mypage" component={MyPagePage} />
+        <Route path="/mypage/activity" />
         <Route path="/write" />
         <Redirect from="*" to="/" />
       </Switch>
