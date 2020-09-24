@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   max-width: 1100px;
@@ -14,4 +14,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ({ children }) => <Wrapper>{children}</Wrapper>;
+export default ({ children, ...rest }) => <Wrapper {...rest}>{children}</Wrapper>;
