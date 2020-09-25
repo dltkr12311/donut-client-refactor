@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Common/Button';
+import Modal from '../Modal/Modal';
 
 const Content = styled.div`
   padding: 3rem 4rem;
@@ -50,6 +51,20 @@ const Item = styled.div`
 `;
 
 const MyProfile = () => {
+  const [nameModal, setNameModal] = useState(false);
+  const [passwordModal, setPasswordModal] = useState(false);
+  const [leaveModal, setLeaveModal] = useState(false);
+
+  const onCancel = () => {
+    setNameModal(false);
+    setPasswordModal(false);
+    setLeaveModal(false);
+  };
+  const onConfirm = () => {
+    setNameModal(false);
+    setPasswordModal(false);
+    setLeaveModal(false);
+  };
   return (
     <Content>
       <Item>
@@ -57,7 +72,14 @@ const MyProfile = () => {
           <h2>유저명</h2>
           <p>DB: 유저명</p>
         </div>
-        <StyledButton>변경</StyledButton>
+        <StyledButton onClick={() => setNameModal(true)}>변경</StyledButton>
+        <Modal
+          visible={nameModal}
+          usernameChanger
+          title="🔧 유저명 변경"
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+        />
       </Item>
       <Item>
         <div className="dbvalue">
@@ -67,11 +89,25 @@ const MyProfile = () => {
       </Item>
       <Item>
         <h2>패스워드</h2>
-        <StyledButton>변경</StyledButton>
+        <StyledButton onClick={() => setPasswordModal(true)}>변경</StyledButton>
+        <Modal
+          visible={passwordModal}
+          passwordChanger
+          title="🔧 패스워드 변경"
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+        />
       </Item>
-      <Item last={1}>
+      <Item last>
         <h2>회원탈퇴</h2>
-        <StyledButton>탈퇴</StyledButton>
+        <StyledButton onClick={() => setLeaveModal(true)}>탈퇴</StyledButton>
+        <Modal
+          visible={leaveModal}
+          title="👨‍🔧 회원탈퇴"
+          description="탈퇴한 계정은 복구가 불가능합니다. 그래도 정말 탈퇴하시겠습니까?"
+          onCancel={onCancel}
+          onConfirm={onConfirm}
+        />
       </Item>
     </Content>
   );

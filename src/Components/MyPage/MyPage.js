@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ResponsiveWrapper from '../Common/ResponsiveWrapper';
 import MyActivity from './MyActivity';
 import MyProfile from './MyProfile';
@@ -20,15 +20,33 @@ const VerticalNav = styled.div`
   }
 `;
 
+const SLink = styled(Link)`
+  color: #838383;
+  transition: color 100ms ease-in-out;
+  ${(props) =>
+    props.current &&
+    css`
+      border-bottom: 3px solid #384259;
+      color: black;
+    `}
+  &:hover {
+    color: black;
+  }
+`;
+
 const MyPage = ({ location: { pathname } }) => {
   return (
     <Block>
       <VerticalNav>
         <div>
-          <Link to="/mypage">프로필 설정</Link>
+          <SLink current={pathname === '/mypage'} to="/mypage">
+            프로필 설정
+          </SLink>
         </div>
         <div>
-          <Link to="/mypage/activity">내 활동</Link>
+          <SLink current={pathname === '/mypage/activity'} to="/mypage/activity">
+            내 활동
+          </SLink>
         </div>
       </VerticalNav>
       {pathname === '/mypage' ? <MyProfile /> : <MyActivity />}
