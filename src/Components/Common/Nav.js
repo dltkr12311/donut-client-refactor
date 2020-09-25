@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import ResponsiveWrapper from "./ResponsiveWrapper";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import ResponsiveWrapper from './ResponsiveWrapper';
 const SLink = styled(Link)`
   width: 100%;
   display: flex;
@@ -21,20 +21,30 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #3f72af;
+  color: #838383;
+  transition: color 100ms ease-in-out;
+  ${(props) =>
+    props.current &&
+    css`
+      border-bottom: 3px solid #3f72af;
+      color: black;
+    `}
+  &:hover {
+    color: black;
+  }
   &:first-child {
     margin-right: 2rem;
   }
 `;
 
-const Nav = () => {
+const Nav = ({ location: { pathname } }) => {
   return (
     <ResponsiveWrapper>
       <Wrapper>
-        <Item>
+        <Item current={pathname === '/'}>
           <SLink to="/">동네 활동</SLink>
         </Item>
-        <Item>
+        <Item current={pathname === '/mylist'}>
           <SLink to="/mylist">참여하고 있는 활동 보기</SLink>
         </Item>
       </Wrapper>
@@ -42,4 +52,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default withRouter(Nav);

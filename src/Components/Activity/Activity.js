@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import ResponsiveWrapper from "../Common/ResponsiveWrapper";
-import ActivityList from "../Common/ActivityList";
+import React from 'react';
+import styled from 'styled-components';
+import ResponsiveWrapper from '../Common/ResponsiveWrapper';
+import ActivityList from '../Common/ActivityList';
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,8 +11,6 @@ const Activity = () => {
   return (
     <ResponsiveWrapper>
       <Wrapper>
-        <ActivityList />
-        <ActivityList />
         <ActivityList />
         <ActivityList />
         <ActivityList />
