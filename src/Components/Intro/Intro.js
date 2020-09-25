@@ -4,6 +4,21 @@ import ResponsiveWrapper from "../Common/ResponsiveWrapper";
 import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
+  @media screen and (max-width: 960px) {
+    width: 100vw;
+    Img {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    width: 100vw;
+    Img {
+      width: 100%;
+    }
+  }
+`;
+
+const IntroBlock = styled.div`
   width: 70%;
   height: 80vh;
   margin: 0 auto;
@@ -54,13 +69,15 @@ const IntroForm = () => {
   return (
     <ResponsiveWrapper>
       <Wrapper>
-        <Img src='https://i.imgur.com/UTaYQM1.png" title="Programming-amico.png' />
-        <Button>
-          <Link to="/signin">로그인 또는 회원가입 하기</Link>
-        </Button>
-        <Button>
-          <Link to="/locate">동네 설정하고 둘러보기</Link>
-        </Button>
+        <IntroBlock>
+          <Img src='https://i.imgur.com/UTaYQM1.png" title="Programming-amico.png' />
+          <Button>
+            <Link to="/signin">로그인 또는 회원가입 하기</Link>
+          </Button>
+          <Button>
+            <Link to="/locate">동네 설정하고 둘러보기</Link>
+          </Button>
+        </IntroBlock>
       </Wrapper>
     </ResponsiveWrapper>
   );

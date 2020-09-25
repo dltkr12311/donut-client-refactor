@@ -5,7 +5,16 @@ import Button from "../Common/Button";
 import { GoMarkGithub } from "react-icons/go";
 import ResponsiveWrapper from "../Common/ResponsiveWrapper";
 
-const Wrppaer = styled.div`
+/* styled-components */
+const Wrapper = styled.div`
+  @media screen and (max-width: 960px) {
+    width: 40vw;
+  }
+  @media screen and (max-width: 750px) {
+    width: 50vw;
+  }
+`;
+const AuthFormBlock = styled.div`
   h3 {
     margin: 0;
     color: #333;
@@ -15,7 +24,6 @@ const Wrppaer = styled.div`
   }
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   p {
     margin: 10% 0 2% 0;
@@ -24,10 +32,8 @@ const Wrppaer = styled.div`
     width: 80%;
   }
   .sns-login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    text-align: center;
   }
   .no-login {
     margin: 0 auto;
@@ -50,6 +56,7 @@ const StyledButton = styled.div`
   border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
+  margin: 0 auto;
   padding: 0.25rem 1rem;
   color: white;
   outline: none;
@@ -106,81 +113,102 @@ const Footer = styled.div`
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 2rem;
 `;
+
 const textMap = {
   login: "로그인",
   register: "계정 만들기",
 };
 
+/* 검증로그인 만들기 */
+
 const AuthForm = ({ type }) => {
   const text = textMap[type];
   return (
     <ResponsiveWrapper>
-      <Wrppaer>
-        <h3>{text}</h3>
-        <div className="sns-login">
-          <StyledButton>
-            <GoMarkGithub className="git-icon" />
-            github으로 로그인하기
-          </StyledButton>
-          <p style={{ fontWeight: "bold" }}>또는</p>
-        </div>
-        <form>
-          <StyledInput
-            autoComplete="useremail"
-            name="useremail"
-            placeholder="이메일"
-          ></StyledInput>
-          <StyledInput
-            autoComplete="password"
-            name="password"
-            placeholder="비밀번호"
-            type="password"
-          ></StyledInput>
-          {type === "register" &&
-            ((
-              <StyledInput
-                autoComplete="password"
-                name="password"
-                placeholder="비밀번호확인"
-                type="password"
-              ></StyledInput>
-            ),
-            (
-              <StyledInput
-                autoComplete="address"
-                name="address"
-                placeholder="주소"
-              ></StyledInput>
-            ),
-            (
-              <StyledInput
-                autoComplete="nickname"
-                name="nickname"
-                placeholder="닉네임"
-              ></StyledInput>
-            ))}
-          <ButtonWithMarginTop cyan FullWidth>
-            {text}
-          </ButtonWithMarginTop>
-        </form>
-        <Footer>
-          {type === "login" ? (
-            <p className="no-login">
-              아직 계정이 없으신가요?{" "}
-              <Link to="/signup" className="footer">
-                회원가입
-              </Link>
-            </p>
-          ) : (
-            <p className="no-login">
-              이미 계정이 있으신가요?{" "}
-              <Link to="/signin" className="footer">
-                로그인
-              </Link>
-            </p>
-          )}
-        </Footer>
-      </Wrppaer>
+      <Wrapper>
+        <AuthFormBlock>
+          <h3>{text}</h3>
+          <div
+            className="sns-login"
+            style={{ display: type === "register" ? "none" : "block" }}
+          >
+            <StyledButton>
+              <GoMarkGithub className="git-icon" />
+              github으로 로그인하기
+            </StyledButton>
+            <p style={{ fontWeight: "bold" }}>또는</p>
+          </div>
+          <form>
+            <StyledInput
+              autoComplete="useremail"
+              name="useremail"
+              placeholder="이메일"
+            ></StyledInput>
+            <StyledInput
+              autoComplete="password"
+              name="password"
+              placeholder="비밀번호"
+              type="password"
+            ></StyledInput>
+            <StyledInput
+              autoComplete="new-password"
+              name="password"
+              placeholder="비밀번호확인"
+              type="password"
+              style={{ display: type === "register" ? "block" : "none" }}
+            ></StyledInput>
+            <StyledInput
+              autoComplete="address"
+              name="address"
+              placeholder="주소"
+              style={{ display: type === "register" ? "block" : "none" }}
+            ></StyledInput>
+            {type === "register" &&
+              ((
+                <StyledInput
+                  autoComplete="new-password"
+                  name="password"
+                  placeholder="비밀번호확인"
+                  type="password"
+                ></StyledInput>
+              ),
+              (
+                <StyledInput
+                  autoComplete="address"
+                  name="address"
+                  placeholder="주소"
+                ></StyledInput>
+              ),
+              (
+                <StyledInput
+                  autoComplete="nickname"
+                  name="nickname"
+                  placeholder="닉네임"
+                ></StyledInput>
+              ))}
+            <ButtonWithMarginTop cyan FullWidth>
+              {text}
+            </ButtonWithMarginTop>
+          </form>
+          <Footer>
+            {type === "login" ? (
+              <p className="no-login">
+                아직 계정이 없으신가요?{" "}
+                <Link to="/signup" className="footer">
+                  회원가입
+                </Link>
+              </p>
+            ) : (
+              <p className="no-login">
+                이미 계정이 있으신가요?{" "}
+                <Link to="/signin" className="footer">
+                  로그인
+                </Link>
+              </p>
+            )}
+          </Footer>
+        </AuthFormBlock>
+      </Wrapper>
     </ResponsiveWrapper>
   );
 };
