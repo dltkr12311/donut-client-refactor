@@ -1,6 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Link, withRouter } from 'react-router-dom';
+import styled, { css } from 'styled-components';
 import ResponsiveWrapper from '../Common/ResponsiveWrapper';
+import MyActivity from './MyActivity';
+import MyProfile from './MyProfile';
 
 const Block = styled(ResponsiveWrapper)`
   display: flex;
@@ -17,71 +20,38 @@ const VerticalNav = styled.div`
   }
 `;
 
-const Content = styled.div`
-  padding: 3rem 4rem;
-  background: #f4f2ed;
-  border-radius: 9px;
-  flex-grow: 2;
-
-  h2 {
-    font-size: 1.3rem;
-    margin-right: 2rem;
-  }
-  span {
-    margin-right: 2rem;
-  }
-`;
-
-const Item = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  padding: 1.5rem 2rem;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px black;
-  margin-bottom: ${(props) => (props.last ? 0 : '2rem')};
-  h2 {
-    font-weight: bold;
-  }
-  .dbvalue {
-    display: flex;
-    align-items: center;
+const SLink = styled(Link)`
+  color: #838383;
+  transition: color 100ms ease-in-out;
+  ${(props) =>
+    props.current &&
+    css`
+      border-bottom: 3px solid #384259;
+      color: black;
+    `}
+  &:hover {
+    color: black;
   }
 `;
 
-const MyPage = () => {
+const MyPage = ({ location: { pathname } }) => {
   return (
     <Block>
       <VerticalNav>
-        <div>프로필 설정</div>
-        <div>내 활동</div>
+        <div>
+          <SLink current={pathname === '/mypage'} to="/mypage">
+            프로필 설정
+          </SLink>
+        </div>
+        <div>
+          <SLink current={pathname === '/mypage/activity'} to="/mypage/activity">
+            내 활동
+          </SLink>
+        </div>
       </VerticalNav>
-      <Content>
-        <Item>
-          <div className="dbvalue">
-            <h2>유저명</h2>
-            <p>DB: 유저명</p>
-          </div>
-          <span>변경</span>
-        </Item>
-        <Item>
-          <div className="dbvalue">
-            <h2>E-mail</h2>
-            <span>DB:email</span>
-          </div>
-        </Item>
-        <Item>
-          <h2>패스워드</h2>
-          <span>변경</span>
-        </Item>
-        <Item last={1}>
-          <h2>회원탈퇴</h2>
-          <span>탈퇴</span>
-        </Item>
-      </Content>
+      {pathname === '/mypage' ? <MyProfile /> : <MyActivity />}
     </Block>
   );
 };
 
-export default MyPage;
+export default withRouter(MyPage);

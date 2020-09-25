@@ -20,11 +20,24 @@ const Wrapper = styled.div`
   height: 100%;
   justify-content: space-between;
   align-items: center;
-
+  img {
+    margin-right: 0.4rem;
+  }
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #821752;
+    min-width: 100px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    &:hover {
+      font-size: 0;
+    }
+    &:hover:before {
+      content: '도 넛';
+      font-size: 1.5rem;
+    }
   }
 `;
 

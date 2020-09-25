@@ -7,6 +7,8 @@ import LocatePage from '../../Pages/LocatePage';
 import LoginPage from '../../Pages/LoginPage';
 import RegisterPage from '../../Pages/RegisterPage';
 import MyPagePage from '../../Pages/MyPagePage';
+import WritePage from '../../Pages/WritePage';
+import ActivityDetailPage from '../../Pages/ActivityDetailPage';
 
 export default () => (
   <Router>
@@ -19,8 +21,8 @@ export default () => (
         <Route path="/mylist" component={MyListPage} />
         <Route path="/locate" component={LocatePage} />
         <Route path="/mypage" component={MyPagePage} />
-        <Route path="/mypage/activity" />
-        <Route path="/write" />
+        <Route path="/write" component={WritePage} />
+        <Route path="/@:username/:activityId" component={ActivityDetailPage} />
         <Redirect from="*" to="/" />
       </Switch>
     </>
