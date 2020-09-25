@@ -8,12 +8,12 @@ export const changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, value }) => ({
     form, // register, login
-    key, // email, password, passwordConfirm, address, nickname
+    key, // username, paassword, passwordConfirm
     value, // 실제 바꾸려는 값
   })
 );
 
-export const initalizeForm = createAction(INITALIZE_FORM, (form) => form); //regiser, login
+export const initalizeForm = createAction(INITALIZE_FORM, (form) => form); // register,login
 
 const initalState = {
   register: {
@@ -29,7 +29,6 @@ const initalState = {
   },
 };
 
-// immer 안쓰고 구현해보기
 const auth = handleActions(
   {
     [CHANGE_FIELD]: (state, { payload: { form, key, value } }) =>
