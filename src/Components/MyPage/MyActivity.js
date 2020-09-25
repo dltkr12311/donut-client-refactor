@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import MyActivityList from '../Common/MyActivityList';
 
 const Content = styled.div`
   padding: 3rem 4rem;
@@ -19,7 +20,10 @@ const Content = styled.div`
 const MyActivity = () => {
   return (
     <Content>
-      <div>나의 활동</div>
+      <MyActivityList />
+      <MyActivityList />
+      <MyActivityList />
+      <MyActivityList last />
     </Content>
   );
 };

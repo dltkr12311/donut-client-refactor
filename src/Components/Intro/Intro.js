@@ -1,85 +1,54 @@
-import React from "react";
-import styled from "styled-components";
-import ResponsiveWrapper from "../Common/ResponsiveWrapper";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import palette from '../../lib/styles/palette';
+import Button from '../Common/Button';
 
-const Wrapper = styled.div`
-  @media screen and (max-width: 960px) {
-    width: 100vw;
-    Img {
-      width: 100%;
-    }
-  }
-  @media screen and (max-width: 750px) {
-    width: 100vw;
-    Img {
-      width: 100%;
-    }
-  }
+const Block = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: ${palette.header};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-const IntroBlock = styled.div`
-  width: 70%;
-  height: 80vh;
-  margin: 0 auto;
-  margin-top: 5%;
+const Intro = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background: ivory;
+  margin-bottom: 1.5rem;
+`;
+const Box = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  a {
-    display: block;
-    color: #fff;
-  }
-`;
-
-const Button = styled.button`
-  width: 55%;
-  height: 5vh;
-  margin-bottom: 3%;
-  margin-top: 5%;
-  justify-content: flex-start;
-  background-color: #70adb5;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-  font-size: 1rem;
-  border-radius: 5px;
-  font-weight: bold;
-  &:last-child {
-    margin-top: 0;
-    margin-bottom: 7%;
-  }
-  &:active,
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    background-color: #709fb0;
-  }
-`;
-
-const Img = styled.img`
-  width: 80%;
-  height: 50vh;
+  padding: 2rem;
+  width: 35%;
+  min-width: 500px;
+  background: #f9f7f7;
+  border-radius: 10px;
 `;
 
 const IntroForm = () => {
   return (
-    <ResponsiveWrapper>
-      <Wrapper>
-        <IntroBlock>
-          <Img src='https://i.imgur.com/UTaYQM1.png" title="Programming-amico.png' />
-          <Button>
-            <Link to="/signin">로그인 또는 회원가입 하기</Link>
+    <Block>
+      <Box>
+        <Intro>대충 소개 할곳</Intro>
+        <Link to="/signin">
+          <Button fullWidth style={{ marginBottom: '1rem' }}>
+            로그인 또는 회원가입 하기
           </Button>
-          <Button>
-            <Link to="/locate">동네 설정하고 둘러보기</Link>
-          </Button>
-        </IntroBlock>
-      </Wrapper>
-    </ResponsiveWrapper>
+        </Link>
+        <Link to="/locate">
+          <Button fullWidth>동네 설정하고 둘러보기</Button>
+        </Link>
+      </Box>
+    </Block>
   );
 };
 export default IntroForm;

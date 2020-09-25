@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
+import '../../lib/styles/fonts.css';
 const GlobalStyles = createGlobalStyle`
   ${reset};
   a {
@@ -9,7 +9,10 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     margin-top: 3rem;
-    background: #f9f7f7;
+    background: #ffecda;
+  }
+  body, input, button{
+    font-family: 'RIDIBatang', sans-serif;
   }
 `;
 export default GlobalStyles;
