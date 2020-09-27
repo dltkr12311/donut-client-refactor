@@ -48,7 +48,7 @@ const Item = styled.div`
     margin-right: 2rem;
   }
 `;
-
+// TODO: 비로그인일 경우 활동 작성 버튼 안보이게하기
 const Nav = ({ location: { pathname } }) => {
   return (
     <StyledResponsive>
@@ -61,9 +61,11 @@ const Nav = ({ location: { pathname } }) => {
             <SLink to="/mylist">참여하고 있는 활동 보기</SLink>
           </Item>
         </div>
-        <Link to="/write">
-          <Button>활동 작성</Button>
-        </Link>
+        {pathname !== '/write' && (
+          <Link to="/write">
+            <Button>활동 작성</Button>
+          </Link>
+        )}
       </Wrapper>
     </StyledResponsive>
   );

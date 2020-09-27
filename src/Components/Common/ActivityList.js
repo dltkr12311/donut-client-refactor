@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import palette from '../../lib/styles/palette';
 
 const Block = styled.div`
   font-size: 1rem;
   width: calc(50% - 4.3rem);
   border-radius: 8px;
-  background: #ffc7c7;
-  border: 2px solid black;
+  background: ${palette.activity};
+  border: 2px solid rgba(0, 0, 0, 0.4);
   margin: 0.5rem;
   padding: 1.5rem;
   @media screen and (max-width: 950px) {

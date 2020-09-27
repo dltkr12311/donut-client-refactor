@@ -13,6 +13,7 @@ const Block = styled.div`
   line-height: 3rem;
   background: #ad9d9d;
   box-shadow: 0px 2px 4px black;
+  z-index: 1000;
 `;
 
 const Wrapper = styled.div`
@@ -78,6 +79,7 @@ const DropDown = styled.ul`
     background: #b2a5a5;
   }
 `;
+// TODO: 비로그인일 경우 로그인 버튼으로 만들기
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (

@@ -8,7 +8,7 @@ const Content = styled.div`
   background: #f4f2ed;
   border-radius: 9px;
   flex-grow: 2;
-
+  border: 2px solid rgba(0, 0, 0, 0.4);
   h2 {
     font-size: 1.3rem;
     margin-right: 2rem;
@@ -23,7 +23,6 @@ const StyledButton = styled(Button)`
   min-width: 80px;
   background: #838383;
   box-shadow: 0px 2px 4px black;
-
   &:hover {
     background: #cbaf87;
   }
