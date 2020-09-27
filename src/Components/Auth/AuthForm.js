@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Button from "../Common/Button";
-import { GoMarkGithub } from "react-icons/go";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Button from '../Common/Button';
+import { GoMarkGithub } from 'react-icons/go';
 
 const AuthFormBlock = styled.div`
   h3 {
@@ -64,7 +64,7 @@ const StyledInput = styled.input`
 
   &:focus {
     color: #333;
-    border-bottom: 1px solid blue;
+    border-bottom: 3px solid #6c5b7b;
   }
   & + & {
     margin-top: 1.3rem;
@@ -94,8 +94,8 @@ const ButtonWithMarginTop = styled(Button)`
 `;
 
 const textMap = {
-  login: "로그인",
-  register: "계정 만들기",
+  login: '로그인',
+  register: '계정 만들기',
 };
 
 /* 검증로그인 만들기 */
@@ -105,13 +105,13 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
     <AuthFormBlock>
       <h3>{text}</h3>
       <div className="sns-login">
-        {type === "login" && (
+        {type === 'login' && (
           <>
             <StyledButton fullWidth>
               <GoMarkGithub className="git-icon" />
               github으로 로그인하기
             </StyledButton>
-            <p style={{ fontWeight: "bold" }}>또는</p>
+            <p style={{ fontWeight: 'bold' }}>또는</p>
           </>
         )}
       </div>
@@ -131,7 +131,7 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
           onChange={onChange}
           value={form.password}
         ></StyledInput>
-        {type === "register" && (
+        {type === 'register' && (
           <>
             <StyledInput
               autoComplete="passwordConfirm"
@@ -160,16 +160,16 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
         <ButtonWithMarginTop fullWidth>{text}</ButtonWithMarginTop>
       </form>
       <Footer>
-        {type === "login" ? (
+        {type === 'login' ? (
           <p className="no-login">
-            아직 계정이 없으신가요?{" "}
+            아직 계정이 없으신가요?{' '}
             <Link to="/signup" className="footer">
               회원가입
             </Link>
           </p>
         ) : (
           <p className="no-login">
-            이미 계정이 있으신가요?{" "}
+            이미 계정이 있으신가요?{' '}
             <Link to="/signin" className="footer">
               로그인
             </Link>
