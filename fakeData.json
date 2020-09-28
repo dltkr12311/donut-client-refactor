@@ -1,0 +1,115 @@
+{
+  "signin": [
+    {}
+  ],
+  "signup": [
+    {
+      "email": "park@sak.com",
+      "password": "444",
+      "passwordConfirm": "444",
+      "address": "발리",
+      "username": "박코딩"
+    },
+    {
+      "email": "lee@sak.com",
+      "password": "111",
+      "passwordConfirm": "111",
+      "address": "말레이시아",
+      "username": "이코딩"
+    },
+    {
+      "id": 1,
+      "email": "park@sak.com",
+      "password": "444",
+      "passwordConfirm": "444",
+      "address": "발리",
+      "username": "박코딩"
+    },
+    {
+      "id": 2,
+      "email": "123@sak.com",
+      "password": "555",
+      "passwordConfirm": "555",
+      "address": "발리",
+      "username": "박코딩"
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 3
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 4
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 5
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 6
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 7
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 8
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 9
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 10
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 11
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 12
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 13
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 14
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "apiId": "auth",
+      "id": 15
+    }
+  ]
+}

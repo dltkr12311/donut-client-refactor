@@ -1,10 +1,12 @@
 import React from "react";
-import IntroForm from '../Components/Intro/Intro';
+import IntroForm from "../Components/Intro/Intro";
 
 const IntroPage = () => {
-  return <>
-    <IntroForm />
-  </>
+  return (
+    <>
+      <IntroForm />
+    </>
+  );
 };
 
 export default IntroPage;

@@ -1,8 +1,8 @@
 import React from "react";
-import LocateForm from '../Components/Locate/Locate';
+import LocateForm from "../Components/Locate/Locate";
 
 const LocatePage = () => {
-    return <LocateForm />
+  return <LocateForm />;
 };
 
 export default LocatePage;
