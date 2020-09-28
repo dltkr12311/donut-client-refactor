@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import palette from '../../lib/styles/palette';
-import { TiArrowBack } from 'react-icons/ti';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import palette from "../../lib/styles/palette";
+import { TiArrowBack } from "react-icons/ti";
+import { Link } from "react-router-dom";
 const AutoTemplateBlock = styled.div`
   position: absolute;
   left: 0;
@@ -49,7 +49,7 @@ const AuthTemplate = ({ children }) => {
             alt="donut-logo"
           />
           <SLink to="/intro">
-            <TiArrowBack size={80} color={'#838383'} />
+            <TiArrowBack size={80} color={"#838383"} />
           </SLink>
         </FlexBox>
         {children}

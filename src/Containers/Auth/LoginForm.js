@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeField, initalizeForm } from "../../modules/auth";
+import { changeField, initializeForm } from "../../modules/auth";
 import AuthForm from "../../Components/Auth/AuthForm";
 
 const LoginForm = () => {
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
   // 맨 처음 렌더링 후 initalizeForm 액션 생성 함수를 호출함
   useEffect(() => {
-    dispatch(initalizeForm("login"));
+    dispatch(initializeForm("login"));
   }, [dispatch]);
 
   return (
