@@ -75,7 +75,7 @@ const ButtonBlock = styled.div`
   }
 `;
 
-const ActivityDetail = () => {
+const ActivityDetail = ({ actionButtons }) => {
   return (
     <ResponsiveWrapper>
       <Block>
@@ -91,6 +91,7 @@ const ActivityDetail = () => {
             </div>
             <div className="author">DB:username</div>
           </div>
+          {actionButtons}
           <ButtonBlock>
             <div className="btn">참여하기</div>
           </ButtonBlock>

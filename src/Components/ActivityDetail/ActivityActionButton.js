@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Block = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-start;
   .btn {
     cursor: pointer;
     border-radius: 8px;
@@ -13,6 +14,9 @@ const Block = styled.div`
     padding: 10px 15px;
     transition: all 100ms ease-in-out;
     box-shadow: 0px 2px 4px black;
+  }
+  .btn:first-child {
+    margin-right: 1rem;
   }
   .btn:hover {
     color: white;

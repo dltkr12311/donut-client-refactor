@@ -20,9 +20,10 @@ export const changeField = createAction(CHANGE_FIELD, ({ key, value }) => ({
 
 export const writeActivity = createAction(
   WRITE_ACTIVITY,
-  ({ name, intro, participation_cretira, rule }) => ({
+  ({ name, intro, skills, participation_cretira, rule }) => ({
     name,
     intro,
+    skills,
     participation_cretira,
     rule,
   })
@@ -36,6 +37,7 @@ export function* writeSaga() {
 const initialState = {
   name: '',
   intro: '',
+  skills: [],
   participation_cretira: '',
   rule: '',
   activity: null,
