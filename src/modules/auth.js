@@ -25,11 +25,16 @@ export const changeField = createAction(
   })
 );
 
-export const initializeForm = createAction(INITIALIZE_FORM, (form) => form); // register,login
-export const register = createAction(REGISTER, ({ email, password }) => ({
-  email,
-  password,
-}));
+export const initializeForm = createAction(INITIALIZE_FORM, (form) => form);
+export const register = createAction(
+  REGISTER,
+  ({ email, password, username, address }) => ({
+    email,
+    password,
+    username,
+    address,
+  })
+);
 export const login = createAction(LOGIN, ({ email, password }) => ({
   email,
   password,
@@ -40,7 +45,7 @@ const registerSaga = createRequestSaga(REGISTER, authAPI.register);
 const loginSaga = createRequestSaga(LOGIN, authAPI.login);
 export function* authSaga() {
   yield takeLatest(REGISTER, registerSaga);
-  yield takeLatest(LOGIN, loginSaga);
+  yield takeLatest(LOGIN, loginSaga); //takeLatest 가장 마지막(최근)에 실행된 액션만 핸들링한다. 같이 살행되는 액션은 무시된다.
 }
 
 const initialState = {
