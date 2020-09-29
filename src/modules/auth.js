@@ -1,29 +1,22 @@
-import { createAction, handleActions } from "redux-actions";
-import produce from "immer";
-import { takeLatest } from "redux-saga/effects";
-import createRequestSaga, {
-  createRequestActionTypes,
-} from "../lib/createRequestSaga";
-import * as authAPI from "../lib/api/auth";
+import { createAction, handleActions } from 'redux-actions';
+import produce from 'immer';
+import { takeLatest } from 'redux-saga/effects';
+import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
+import * as authAPI from '../lib/api/auth';
 
-const CHANGE_FIELD = "auth/CHANGE_FIELD";
-const INITIALIZE_FORM = "auth/INITALIZE_FORM";
+const CHANGE_FIELD = 'auth/CHANGE_FIELD';
+const INITIALIZE_FORM = 'auth/INITALIZE_FORM';
 
 const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] = createRequestActionTypes(
-  "auth/REGISTER"
+  'auth/REGISTER'
 );
-const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
-  "auth/LOGIN"
-);
+const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes('auth/LOGIN');
 
-export const changeField = createAction(
-  CHANGE_FIELD,
-  ({ form, key, value }) => ({
-    form, // register, login
-    key, // username, paassword, passwordConfirm
-    value, // 실제 바꾸려는 값
-  })
-);
+export const changeField = createAction(CHANGE_FIELD, ({ form, key, value }) => ({
+  form, // register, login
+  key, // username, paassword, passwordConfirm
+  value, // 실제 바꾸려는 값
+}));
 
 export const initializeForm = createAction(INITIALIZE_FORM, (form) => form); // register,login
 export const register = createAction(REGISTER, ({ email, password }) => ({
@@ -45,15 +38,15 @@ export function* authSaga() {
 
 const initialState = {
   register: {
-    username: "",
-    email: "",
-    password: "",
-    passwordConfirm: "",
-    address: "",
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
+    address: '',
   },
   login: {
-    email: "",
-    passowrd: "",
+    email: '',
+    passowrd: '',
   },
   auth: null,
   authError: null,

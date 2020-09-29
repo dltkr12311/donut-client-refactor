@@ -38,6 +38,12 @@ const Box = styled.div`
   border-radius: 10px;
 `;
 const LocateForm = () => {
+  // navigator.geolocation.getCurrentPosition(function (position) {
+  //   var lat = position.coords.latitude, // 위도
+  //     lon = position.coords.longitude; // 경도
+  //   // 마커와 인포윈도우를 표시합니다
+  //   console.log(lat, lon);
+  // });
   return (
     <Block>
       <Box>

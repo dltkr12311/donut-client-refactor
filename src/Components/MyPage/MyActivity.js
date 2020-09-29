@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import MyActivityList from '../Common/MyActivityList';
+import MyActivityList from './MyActivityList';
 
 const Content = styled.div`
   padding: 3rem 4rem;
