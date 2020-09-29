@@ -72,7 +72,11 @@ const ButtonBlock = styled.div`
 const StyledButton = styled(Button)`
   font-size: 1.5rem;
 `;
-const Write = () => {
+const Write = ({ onChangeField, name, intro, participation_cretira, rule }) => {
+  const onChangeName = (e) => {
+    onChangeField({ key: 'name', value: e.target.value });
+  };
+
   return (
     <ResponsiveWrapper>
       <Form>
@@ -81,12 +85,14 @@ const Write = () => {
             <StyledInput
               className="input-title"
               placeholder="활동 제목을 입력해주세요."
+              onChange={onChangeName}
+              value={name}
             />
           </div>
-          <div className="item">
+          {/* <div className="item">
             <div className="item-title">주요 활동</div>
             <StyledInput placeholder="주요 활동을 작성해주세요." />
-          </div>
+          </div> */}
           <div className="item">
             <div className="item-title">활동 소개</div>
             <StyledInput placeholder="활동을 소개하는 내용을 작성해주세요." />
