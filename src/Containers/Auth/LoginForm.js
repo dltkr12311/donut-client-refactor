@@ -30,7 +30,11 @@ const LoginForm = ({ history }) => {
     e.preventDefault();
     const { email, password } = form;
     if ([email, password].includes("")) {
-      setError("빈 칸을 모두 입력하세요");
+      setError("로그인 정보가 올바르지 않습니다");
+      return;
+    }
+    if (password === undefined) {
+      setError("비밀번호 정보가 올바르지 않습니다");
       return;
     }
     dispatch(login({ email, password }));

@@ -21,6 +21,7 @@ const AuthFormBlock = styled.div`
   form {
     width: 80%;
   }
+
   .sns-login {
     width: 80%;
     text-align: center;
@@ -92,6 +93,22 @@ const Footer = styled.div`
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 2rem;
 `;
+const StyledLi = styled.div`
+  display: block;
+  text-align: center;
+
+  background-color: skyblue;
+  border-radius: 5px;
+  &:hover {
+    background-color: deepskyblue;
+  }
+  & > a {
+    padding: 1rem;
+    display: block;
+    color: #fff;
+    font-size: bold;
+  }
+`;
 
 const ErrorMessage = styled.div`
   color: red;
@@ -106,7 +123,7 @@ const textMap = {
 };
 
 /* 검증로그인 만들기 */
-const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
+const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
@@ -150,19 +167,17 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
               value={form.passwordConfirm}
             ></StyledInput>
             <StyledInput
-              autoComplete="address"
-              name="address"
-              placeholder="주소"
-              onChange={onChange}
-              value={form.address}
-            ></StyledInput>
-            <StyledInput
               autoComplete="username"
               name="username"
               placeholder="이름"
               onChange={onChange}
               value={form.username}
             ></StyledInput>
+            <StyledLi>
+              <Link to="" onClick={onClick}>
+                현재위치설정
+              </Link>{" "}
+            </StyledLi>
           </>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}

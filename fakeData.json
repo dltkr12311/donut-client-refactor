@@ -7,124 +7,48 @@
       "id": 1
     },
     {
+      "email": "dltkr12311@naver.com",
       "password": "1234",
-      "apiId": "auth",
       "id": 2
     },
     {
-      "password": "1234",
-      "apiId": "auth",
+      "email": "johnMay0829@google.com",
+      "password": "12123",
       "id": 3
     },
     {
+      "email": "johnMay0829@google.com",
       "password": "1234",
-      "apiId": "auth",
       "id": 4
     },
     {
-      "password": "1234",
-      "apiId": "auth",
+      "email": "johnMay0829@google.com",
+      "password": "123123",
       "id": 5
     },
     {
-      "password": "123",
-      "apiId": "auth",
+      "email": "code@states.com",
+      "password": "2",
       "id": 6
     },
     {
-      "password": "1234",
-      "apiId": "auth",
+      "email": "johnMay0829@google.com",
+      "password": "1",
       "id": 7
     },
     {
-      "email": "",
-      "apiId": "auth",
+      "email": "johnMay0829@google.com",
+      "password": "123",
       "id": 8
     },
     {
       "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
+      "password": "123",
       "id": 9
     },
     {
       "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
       "id": 10
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 11
-    },
-    {
-      "email": "",
-      "apiId": "auth",
-      "id": 12
-    },
-    {
-      "email": "zxczxczxcvbv@qweesdcvbxcvb",
-      "password": "123",
-      "apiId": "auth",
-      "id": 13
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 14
-    },
-    {
-      "email": "asdasd@xn--0pdgbv",
-      "password": "ㅋㅌㅊㅍ",
-      "apiId": "auth",
-      "id": 15
-    },
-    {
-      "email": "123@123",
-      "password": "123",
-      "apiId": "auth",
-      "id": 16
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "",
-      "apiId": "auth",
-      "id": 17
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "apiId": "auth",
-      "id": 18
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "123",
-      "apiId": "auth",
-      "id": 19
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "apiId": "auth",
-      "id": 20
-    },
-    {
-      "email": "dltkr12311@naver.com",
-      "apiId": "auth",
-      "id": 21
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "apiId": "auth",
-      "id": 22
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 23
     }
   ],
   "signup": [
@@ -151,381 +75,32 @@
       "username": "박코딩"
     },
     {
-      "id": 2,
-      "email": "123@sak.com",
-      "password": "555",
-      "passwordConfirm": "555",
-      "address": "발리",
-      "username": "박코딩"
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
+      "id": 2
     },
     {
       "email": "johnMay0829@google.com",
       "password": "1234",
-      "apiId": "auth",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
       "id": 3
     },
     {
       "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
+      "password": "123",
+      "address": "실리콘밸리",
+      "username": "123123",
       "id": 4
     },
     {
       "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
+      "password": "123",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
       "id": 5
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 6
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 7
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 8
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 9
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 10
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 11
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 12
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 13
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 14
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 15
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "aaa",
-      "apiId": "auth",
-      "id": 16
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "apiId": "auth",
-      "id": 17
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 18
-    },
-    {
-      "email": "",
-      "password": "",
-      "apiId": "auth",
-      "id": 19
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 20
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 21
-    },
-    {
-      "email": "",
-      "password": "",
-      "apiId": "auth",
-      "id": 22
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "aaa",
-      "address": "서울특별시 마포구 코드동",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 23
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "kimcoding",
-      "apiId": "auth",
-      "id": 24
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 25
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 26
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 27
-    },
-    {
-      "email": "",
-      "password": "",
-      "address": "",
-      "username": "",
-      "apiId": "auth",
-      "id": 28
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "asdf",
-      "address": "실리콘밸리",
-      "username": "kimcoding",
-      "apiId": "auth",
-      "id": 29
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 30
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 31
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "kimcoding",
-      "apiId": "auth",
-      "id": 32
-    },
-    {
-      "email": "codestates@example.io",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 33
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "kimcoding",
-      "apiId": "auth",
-      "id": 34
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 35
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 36
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 37
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "kimcoding",
-      "apiId": "auth",
-      "id": 38
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jack",
-      "apiId": "auth",
-      "id": 39
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jeck",
-      "apiId": "auth",
-      "id": 40
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "123123",
-      "apiId": "auth",
-      "id": 41
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "szxf",
-      "apiId": "auth",
-      "id": 42
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "szsf",
-      "apiId": "auth",
-      "id": 43
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 44
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "John Mayer",
-      "apiId": "auth",
-      "id": 45
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "1234",
-      "apiId": "auth",
-      "id": 46
-    },
-    {
-      "email": "johnMay0829@google.com",
-      "password": "1234",
-      "address": "실리콘밸리",
-      "username": "이삭",
-      "apiId": "auth",
-      "id": 47
-    }
-  ],
-  "check": [
-    {},
-    {
-      "email": "lee@sak.com",
-      "password": "111",
-      "passwordConfirm": "111",
-      "address": "말레이시아",
-      "username": "이코딩",
-      "id": 1
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jack",
-      "apiId": "auth",
-      "id": 39
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jack",
-      "apiId": "auth",
-      "id": 40
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jack",
-      "apiId": "auth",
-      "id": 41
-    },
-    {
-      "email": "zlrlwl@exmap",
-      "password": "asdf",
-      "address": "seoul",
-      "username": "jack",
-      "apiId": "auth",
-      "id": 42
     }
   ]
 }
