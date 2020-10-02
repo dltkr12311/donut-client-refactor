@@ -29,9 +29,6 @@ const MyActivityList = ({ last }) => {
     <Block last={last}>
       <div className="wrapper">
         <div>타이틀</div>
-        <div>간략한 내용</div>
-        <div>동네 주소</div>
-        <div>기술들</div>
       </div>
       <Button>지원자 현황</Button>
       <Modal />

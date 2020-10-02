@@ -75,7 +75,25 @@ const ButtonBlock = styled.div`
   }
 `;
 
-const ActivityDetail = ({ actionButtons }) => {
+const ActivityDetail = ({ activity, error, loading, actionButtons }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return (
+        <ResponsiveWrapper>
+          <Block>존재하지 않는 활동입니다.</Block>
+        </ResponsiveWrapper>
+      );
+    }
+    return (
+      <ResponsiveWrapper>
+        <Block>Error</Block>
+      </ResponsiveWrapper>
+    );
+  }
+  if (loading || !activity) {
+    return null;
+  }
+  console.log(activity);
   return (
     <ResponsiveWrapper>
       <Block>

@@ -23,17 +23,19 @@ const WriteActionButtonContainer = ({ history }) => {
     activity: write.activity,
     activityError: write.activityError,
   }));
-  const onPublish = () => {
+  const onPublish = (e) => {
+    e.preventDefault();
     dispatch(writeActivity({ name, intro, skills, participation_cretira, rule }));
   };
 
-  const onCancel = () => {
+  const onCancel = (e) => {
+    e.preventDefault();
     history.goBack();
   };
 
   useEffect(() => {
     if (activity) {
-      console.log(activity);
+      console.log(activity, '작성완료');
     }
     if (activityError) {
       console.log(activityError);
