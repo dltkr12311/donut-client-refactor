@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Button from '../Common/Button';
@@ -16,18 +17,6 @@ const Block = styled.div`
   justify-content: center;
 `;
 
-const StyledInput = styled.input`
-  font-size: 1.3rem;
-  border: none;
-  border-bottom: 1px solid #000;
-  padding-bottom: 0.5rem;
-  outline: none;
-  text-align: center;
-  background-color: #f9f7f7;
-  letter-spacing: 1px;
-  margin-bottom: 2rem;
-`;
-
 const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,24 +26,32 @@ const Box = styled.div`
   background: #f9f7f7;
   border-radius: 10px;
 `;
-const LocateForm = () => {
-  // navigator.geolocation.getCurrentPosition(function (position) {
-  //   var lat = position.coords.latitude, // 위도
-  //     lon = position.coords.longitude; // 경도
-  //   // 마커와 인포윈도우를 표시합니다
-  //   console.log(lat, lon);
-  // });
+const LocateForm = ({ history }) => {
+  const onClick = (e) => {
+    e.preventDefault();
+    if (!navigator.geolocation) {
+      console.log('위치에러');
+    } else {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const result = `${latitude},${longitude}`;
+        localStorage.setItem('latlon', result);
+        document.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+        console.log(` 경도: ${latitude} 위도: ${longitude}`);
+        history.push('/');
+      });
+    }
+  };
   return (
     <Block>
       <Box>
-        <StyledInput
-          name="locate"
-          placeholder="동명(읍, 면)으로 검색 (ex. 서초동)"
-        ></StyledInput>
-        <Button fullWidth>현재 위치로 찾기</Button>
+        <Button fullWidth onClick={onClick}>
+          현재 위치로 찾기
+        </Button>
       </Box>
     </Block>
   );
 };
 
-export default LocateForm;
+export default withRouter(LocateForm);
