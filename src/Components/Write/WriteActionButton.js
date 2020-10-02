@@ -17,12 +17,12 @@ const StyledButton = styled(Button)`
   font-size: 1.5rem;
 `;
 
-const WriteActionButton = () => {
+const WriteActionButton = ({ onCancel, onPublish }) => {
   return (
     <Block>
       <div className="wrapper">
-        <StyledButton>취소하기</StyledButton>
-        <StyledButton>작성하기</StyledButton>
+        <StyledButton onClick={onCancel}>취소하기</StyledButton>
+        <StyledButton onClick={onPublish}>작성하기</StyledButton>
       </div>
     </Block>
   );

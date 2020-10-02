@@ -36,7 +36,7 @@ const TagList = styled.div`
   }
 `;
 
-const ActivityList = () => {
+const ActivityItem = () => {
   return (
     <Block>
       <Link to={`/@작성자/sample`}>
@@ -58,4 +58,4 @@ const ActivityList = () => {
   );
 };
 
-export default ActivityList;
+export default ActivityItem;
