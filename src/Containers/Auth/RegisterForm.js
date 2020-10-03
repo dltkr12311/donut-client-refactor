@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeField, initializeForm, register } from '../../modules/auth';
 import AuthForm from '../../Components/Auth/AuthForm';
-import { check } from '../../modules/user';
 import { withRouter } from 'react-router-dom';
 
 const RegisterForm = ({ history }) => {
   const [error, setError] = useState(null);
 
   const dispatch = useDispatch();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
+  const { form, auth, authError } = useSelector(({ auth }) => ({
     form: auth.register,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user,
   }));
 
   //클릭시 현재위치 받아오기
@@ -82,19 +80,9 @@ const RegisterForm = ({ history }) => {
     }
     if (auth) {
       console.log('회원가입 완료:', auth);
-      dispatch(check());
+      history.push('/signin');
     }
-  }, [auth, authError, dispatch]);
-
-  // user 값이 잘 설정되어있는지 확인
-  // useEffect(() => {
-  //   if (user) {
-  //     console.log("checkAPI 성공:", user);
-  //     history.push("/user/signin");
-  //   }
-  // }, [history, user]);
-
-  //위도, 경도 업데이트
+  }, [auth, authError, dispatch, history]);
 
   return (
     <AuthForm

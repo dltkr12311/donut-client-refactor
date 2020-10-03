@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Button from "../Common/Button";
-import { GoMarkGithub } from "react-icons/go";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Button from '../Common/Button';
+import { GoMarkGithub } from 'react-icons/go';
 
 const AuthFormBlock = styled.div`
   h3 {
@@ -93,7 +93,7 @@ const Footer = styled.div`
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 2rem;
 `;
-const StyledLi = styled.div`
+const StyledLi = styled(Button)`
   display: block;
   text-align: center;
 
@@ -118,8 +118,8 @@ const ErrorMessage = styled.div`
 `;
 
 const textMap = {
-  login: "로그인",
-  register: "계정 만들기",
+  login: '로그인',
+  register: '계정 만들기',
 };
 
 /* 검증로그인 만들기 */
@@ -129,13 +129,13 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
     <AuthFormBlock>
       <h3>{text}</h3>
       <div className="sns-login">
-        {type === "login" && (
+        {type === 'login' && (
           <>
             <StyledButton fullWidth>
               <GoMarkGithub className="git-icon" />
               github으로 로그인하기
             </StyledButton>
-            <p style={{ fontWeight: "bold" }}>또는</p>
+            <p style={{ fontWeight: 'bold' }}>또는</p>
           </>
         )}
       </div>
@@ -146,7 +146,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
           placeholder="이메일"
           type="email"
           onChange={onChange}
-          value={form.email || ""}
+          value={form.email || ''}
         ></StyledInput>
         <StyledInput
           autoComplete="password"
@@ -154,9 +154,9 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
           placeholder="비밀번호"
           type="password"
           onChange={onChange}
-          value={form.password || ""}
+          value={form.password || ''}
         ></StyledInput>
-        {type === "register" && (
+        {type === 'register' && (
           <>
             <StyledInput
               autoComplete="passwordConfirm"
@@ -173,10 +173,8 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
               onChange={onChange}
               value={form.username}
             ></StyledInput>
-            <StyledLi>
-              <Link to="" onClick={onClick}>
-                현재위치설정
-              </Link>{" "}
+            <StyledLi fullWidth onClick={onClick}>
+              현재위치설정
             </StyledLi>
           </>
         )}
@@ -184,16 +182,16 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
         <ButtonWithMarginTop fullWidth>{text}</ButtonWithMarginTop>
       </form>
       <Footer>
-        {type === "login" ? (
+        {type === 'login' ? (
           <p className="no-login">
-            아직 계정이 없으신가요?{" "}
+            아직 계정이 없으신가요?{' '}
             <Link to="/signup" className="footer">
               회원가입
             </Link>
           </p>
         ) : (
           <p className="no-login">
-            이미 계정이 있으신가요?{" "}
+            이미 계정이 있으신가요?{' '}
             <Link to="/signin" className="footer">
               로그인
             </Link>
