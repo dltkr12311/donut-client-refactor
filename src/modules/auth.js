@@ -53,8 +53,10 @@ const initialState = {
     email: '',
     passowrd: '',
   },
-  auth: null,
-  authError: null,
+  signin: null,
+  signinError: null,
+  signup: null,
+  signupError: null,
 };
 
 const auth = handleActions(
@@ -66,29 +68,30 @@ const auth = handleActions(
     [INITIALIZE_FORM]: (state, { payload: form }) => ({
       ...state,
       [form]: initialState[form],
-      authError: null, // 폼 전환 시 회원 인증 에러 초기화
+      signupError: null, // 폼 전환 시 회원 인증 에러 초기화,
+      signinError: null,
     }),
     //회원가입 성공
-    [REGISTER_SUCCESS]: (state, { payload: auth }) => ({
+    [REGISTER_SUCCESS]: (state, { payload: signup }) => ({
       ...state,
-      authError: null,
-      auth,
+      signupError: null,
+      signup,
     }),
     //회원가입 실패
     [REGISTER_FAILURE]: (state, { payload: error }) => ({
       ...state,
-      authError: error,
+      signupError: error,
     }),
     //로그인 성공
-    [LOGIN_SUCCESS]: (state, { payload: auth }) => ({
+    [LOGIN_SUCCESS]: (state, { payload: signin }) => ({
       ...state,
-      authError: null,
-      auth,
+      signinError: null,
+      signin,
     }),
     //로그인 실패
     [LOGIN_FAILURE]: (state, { payload: error }) => ({
       ...state,
-      authError: error,
+      signinError: error,
     }),
   },
   initialState

@@ -8,10 +8,10 @@ const RegisterForm = ({ history }) => {
   const [error, setError] = useState(null);
 
   const dispatch = useDispatch();
-  const { form, auth, authError } = useSelector(({ auth }) => ({
+  const { form, signup, signupError } = useSelector(({ auth }) => ({
     form: auth.register,
-    auth: auth.auth,
-    authError: auth.authError,
+    signup: auth.signup,
+    signupError: auth.signupError,
   }));
 
   //클릭시 현재위치 받아오기
@@ -72,17 +72,17 @@ const RegisterForm = ({ history }) => {
 
   //회원가입 성공/실패
   useEffect(() => {
-    if (authError) {
-      if (authError.response.status === 409) {
+    if (signupError) {
+      if (signupError.response.status === 409) {
         setError('이미 존재하는 계정입니다');
         return;
       }
     }
-    if (auth) {
-      console.log('회원가입 완료:', auth);
+    if (signup) {
+      console.log('회원가입 완료:', signup);
       history.push('/signin');
     }
-  }, [auth, authError, dispatch, history]);
+  }, [signup, signupError, dispatch, history]);
 
   return (
     <AuthForm
