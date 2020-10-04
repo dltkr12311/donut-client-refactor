@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import ResponsiveWrapper from './ResponsiveWrapper';
 import { FaUserAlt } from 'react-icons/fa';
 import { MdArrowDropDown } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../modules/user';
+import Button from './Button';
 const Block = styled.div`
   position: fixed;
   top: 0;
@@ -80,8 +83,14 @@ const DropDown = styled.ul`
   }
 `;
 // TODO: 비로그인일 경우 로그인 버튼으로 만들기
-const Header = () => {
+const Header = ({ history }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useSelector(({ user }) => ({ user: user.user }));
+  const dispatch = useDispatch();
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <Block>
       <ResponsiveWrapper>
@@ -96,24 +105,29 @@ const Header = () => {
               <h1>DONUT</h1>
             </Link>
           </ItemBlock>
-          <ItemBlock>
-            <Item className="dropdown" onClick={() => setIsOpen(!isOpen)}>
-              <span>
-                <FaUserAlt size={25} />
-              </span>
-              <MdArrowDropDown size={25} />
-              <DropDown isOpen={isOpen}>
-                <Link to="/mypage">
-                  <li>프로필 설정</li>
-                </Link>
-                <li>로그아웃</li>
-              </DropDown>
-            </Item>
-          </ItemBlock>
+          {user ? (
+            <ItemBlock>
+              <div></div>
+              <Item className="dropdown" onClick={() => setIsOpen(!isOpen)}>
+                <span>
+                  <FaUserAlt size={25} />
+                </span>
+                <MdArrowDropDown size={25} />
+                <DropDown isOpen={isOpen}>
+                  <Link to="/mypage">
+                    <li>프로필 설정</li>
+                  </Link>
+                  <li onClick={onLogout}>로그아웃</li>
+                </DropDown>
+              </Item>
+            </ItemBlock>
+          ) : (
+            <Button onClick={() => history.push('/signin')}>로그인</Button>
+          )}
         </Wrapper>
       </ResponsiveWrapper>
     </Block>
   );
 };
 
-export default Header;
+export default withRouter(Header);

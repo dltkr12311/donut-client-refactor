@@ -44,9 +44,6 @@ const IntroForm = () => {
             로그인 또는 회원가입 하기
           </Button>
         </Link>
-        <Link to="/locate">
-          <Button fullWidth>동네 설정하고 둘러보기</Button>
-        </Link>
       </Box>
     </Block>
   );
