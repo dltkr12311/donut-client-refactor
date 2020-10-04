@@ -16,6 +16,7 @@ const ActivityContainer = () => {
   useEffect(() => {
     dispatch(listActivity());
   }, [dispatch]);
+
   return (
     <Activity
       loading={loading}

@@ -84,6 +84,11 @@ const RegisterForm = ({ history }) => {
     }
   }, [signup, signupError, dispatch, history]);
 
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      history.push('/');
+    }
+  }, [history]);
   return (
     <AuthForm
       type="register"
