@@ -6,7 +6,6 @@ import { MdArrowDropDown } from 'react-icons/md';
 import { Link, withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../modules/user';
-import Button from './Button';
 const Block = styled.div`
   position: fixed;
   top: 0;
@@ -82,6 +81,10 @@ const DropDown = styled.ul`
     background: #b2a5a5;
   }
 `;
+const Name = styled.div`
+  margin-right: 1rem;
+  font-weight: bold;
+`;
 // TODO: 비로그인일 경우 로그인 버튼으로 만들기
 const Header = ({ history }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -105,25 +108,21 @@ const Header = ({ history }) => {
               <h1>DONUT</h1>
             </Link>
           </ItemBlock>
-          {user ? (
-            <ItemBlock>
-              <div></div>
-              <Item className="dropdown" onClick={() => setIsOpen(!isOpen)}>
-                <span>
-                  <FaUserAlt size={25} />
-                </span>
-                <MdArrowDropDown size={25} />
-                <DropDown isOpen={isOpen}>
-                  <Link to="/mypage">
-                    <li>프로필 설정</li>
-                  </Link>
-                  <li onClick={onLogout}>로그아웃</li>
-                </DropDown>
-              </Item>
-            </ItemBlock>
-          ) : (
-            <Button onClick={() => history.push('/signin')}>로그인</Button>
-          )}
+          <ItemBlock>
+            {user && <Name>{user.username}</Name>}
+            <Item className="dropdown" onClick={() => setIsOpen(!isOpen)}>
+              <span>
+                <FaUserAlt size={25} />
+              </span>
+              <MdArrowDropDown size={25} />
+              <DropDown isOpen={isOpen}>
+                <Link to="/mypage">
+                  <li>프로필 설정</li>
+                </Link>
+                <li onClick={onLogout}>로그아웃</li>
+              </DropDown>
+            </Item>
+          </ItemBlock>
         </Wrapper>
       </ResponsiveWrapper>
     </Block>
