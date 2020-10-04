@@ -131,11 +131,13 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick, error }) => {
       <div className="sns-login">
         {type === 'login' && (
           <>
-            <StyledButton fullWidth>
-              <GoMarkGithub className="git-icon" />
-              github으로 로그인하기
-            </StyledButton>
-            <p style={{ fontWeight: 'bold' }}>또는</p>
+            <a href="http://localhost:4000/user/github">
+              <StyledButton fullWidth>
+                <GoMarkGithub className="git-icon" />
+                github으로 로그인하기
+              </StyledButton>
+              <p style={{ fontWeight: 'bold' }}>또는</p>
+            </a>
           </>
         )}
       </div>

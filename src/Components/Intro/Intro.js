@@ -16,12 +16,8 @@ const Block = styled.div`
   justify-content: center;
 `;
 
-const Intro = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 500px;
-  background: ivory;
+const Img = styled.img`
+  height: 350px;
   margin-bottom: 1.5rem;
 `;
 const Box = styled.div`
@@ -38,7 +34,7 @@ const IntroForm = () => {
   return (
     <Block>
       <Box>
-        <Intro>대충 소개 할곳</Intro>
+        <Img src="https://i.ibb.co/RCD9YQs/donut-cover.png" alt="donut-cover" />
         <Link to="/signin">
           <Button fullWidth style={{ marginBottom: '1rem' }}>
             로그인 또는 회원가입 하기
