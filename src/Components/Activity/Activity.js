@@ -17,6 +17,7 @@ const Activity = ({ loading, error, activities, showWriteBtn }) => {
   if (error) {
     return <ResponsiveWrapper>에러가 발생했습니다.</ResponsiveWrapper>;
   }
+  console.log(activities);
   return (
     <ResponsiveWrapper>
       {showWriteBtn && (
@@ -26,7 +27,20 @@ const Activity = ({ loading, error, activities, showWriteBtn }) => {
           </Link>
         </WriteButtonWrapper>
       )}
-      <Wrapper>{!loading && activities && <ActivityItem />}</Wrapper>
+      <Wrapper>
+        {!loading &&
+          activities &&
+          activities.map((activity) => (
+            <ActivityItem
+              key={activity.id}
+              id={activity.id}
+              name={activity.name}
+              intro={activity.intro}
+              participationCriteria={activity.participationCriteria}
+              user_info={activity.User}
+            />
+          ))}
+      </Wrapper>
     </ResponsiveWrapper>
   );
 };
