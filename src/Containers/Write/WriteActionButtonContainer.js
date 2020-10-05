@@ -26,6 +26,7 @@ const WriteActionButtonContainer = ({ history }) => {
   const onPublish = (e) => {
     e.preventDefault();
     dispatch(writeActivity({ name, intro, skills, participation_cretira, rule }));
+    history.push('/');
   };
 
   const onCancel = (e) => {

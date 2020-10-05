@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ActivityActionButton from '../../Components/ActivityDetail/ActivityActionButton';
 import ActivityDetail from '../../Components/ActivityDetail/ActivityDetail';
 import { readActivity, unloadActivity } from '../../modules/activity';
@@ -30,4 +31,4 @@ const ActivityDetailContainer = ({ match }) => {
   );
 };
 
-export default ActivityDetailContainer;
+export default withRouter(ActivityDetailContainer);

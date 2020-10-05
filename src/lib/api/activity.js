@@ -6,18 +6,25 @@ const config = {
   withCredentials: true,
 };
 
-export const writeActivity = ({ name, intro, skills, participation_cretira, rule }) => {
+export const writeActivity = ({
+  name,
+  intro,
+  skills,
+  participation_cretira,
+  rule,
+  location = '123,123',
+}) => {
   return client.post(
-    '/activity/createActivity',
-    { name, intro, skills, participation_cretira, rule },
+    '/activity',
+    { name, intro, participation_cretira, rule, location },
     config
   );
 };
 
-export const readActivity = ({ id }) => {
-  return client.get(`/activity/getActivityList/${id}`);
+export const readActivity = (id) => {
+  return client.get(`/activity/${id}`, config);
 };
 
 export const listActivity = () => {
-  return client.get(`/activity/getActivity`);
+  return client.get(`/activity`, config);
 };

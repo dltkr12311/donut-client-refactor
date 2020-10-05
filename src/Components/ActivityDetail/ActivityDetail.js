@@ -105,9 +105,9 @@ const ActivityDetail = ({ activity, error, loading, actionButtons }) => {
                 width="50px"
                 alt="donut-logo"
               />
-              타이틀(땡땡 활동 모집합니다.)
+              {activity.name}
             </div>
-            <div className="author">DB:username</div>
+            <div className="author">작성자</div>
           </div>
           {actionButtons}
           <ButtonBlock>
@@ -115,11 +115,11 @@ const ActivityDetail = ({ activity, error, loading, actionButtons }) => {
           </ButtonBlock>
           <div className="item">
             <div className="item-title">주요 활동</div>
-            <div>(선택된)주요활동</div>
+            <div>{activity.rule}</div>
           </div>
           <div className="item">
             <div className="item-title">활동 소개</div>
-            <div>소개내용소개내용소개내용소개내용소개내용소개내용</div>
+            <div>{activity.intro}</div>
           </div>
           <div className="item">
             <div className="item-title">기술 스택</div>
@@ -139,11 +139,11 @@ const ActivityDetail = ({ activity, error, loading, actionButtons }) => {
           </div>
           <div className="item">
             <div className="item-title">참여 조건</div>
-            <div>참여조건조건조건조건</div>
+            <div>{activity.participationCriteria}</div>
           </div>
           <div className="item location">
             <div className="item-title">위치</div>
-            <div>서울시 용산구 한남동</div>
+            <div>{activity.location}</div>
             <Map>지도</Map>
           </div>
         </Content>
