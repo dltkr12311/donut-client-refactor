@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import Button from '../Common/Button';
-import PasswordChanger from './PasswordChanger';
-import UsernameChanger from './UsernameChanger';
+import React from "react";
+import styled from "styled-components";
+import Button from "../Common/Button";
+import PasswordChanger from "./PasswordChanger";
+import UsernameChanger from "./UsernameChanger";
 
 const FullScreen = styled.div`
   position: fixed;
@@ -44,8 +44,8 @@ const Modal = ({
   passwordChanger,
   title,
   description,
-  cancelText = '취소',
-  confirmText = '확인',
+  cancelText = "취소",
+  confirmText = "확인",
   onConfirm,
   onCancel,
 }) => {
@@ -59,7 +59,7 @@ const Modal = ({
           {passwordChanger && <PasswordChanger />}
         </div>
         <div className="buttons">
-          <Button onClick={onCancel} style={{ marginRight: '1rem' }}>
+          <Button onClick={onCancel} style={{ marginRight: "1rem" }}>
             {cancelText}
           </Button>
           {!usernameChanger && !passwordChanger && (

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ActivityList from '../Common/ActivityList';
+import ActivityItem from '../Activity/ActivityItem';
 import ResponsiveWrapper from '../Common/ResponsiveWrapper';
 
 const Wrapper = styled.div`
@@ -12,9 +12,9 @@ const MyList = () => {
   return (
     <ResponsiveWrapper>
       <Wrapper>
-        <ActivityList />
-        <ActivityList />
-        <ActivityList />
+        <ActivityItem />
+        <ActivityItem />
+        <ActivityItem />
       </Wrapper>
     </ResponsiveWrapper>
   );

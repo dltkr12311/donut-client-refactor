@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import ResponsiveWrapper from './ResponsiveWrapper';
 import { FaUserAlt } from 'react-icons/fa';
 import { MdArrowDropDown } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../modules/user';
 const Block = styled.div`
   position: fixed;
   top: 0;
@@ -13,6 +15,7 @@ const Block = styled.div`
   line-height: 3rem;
   background: #ad9d9d;
   box-shadow: 0px 2px 4px black;
+  z-index: 1000;
 `;
 
 const Wrapper = styled.div`
@@ -78,8 +81,21 @@ const DropDown = styled.ul`
     background: #b2a5a5;
   }
 `;
-const Header = () => {
+const Name = styled.div`
+  margin-right: 1rem;
+  font-weight: bold;
+`;
+// TODO: 비로그인일 경우 로그인 버튼으로 만들기
+const Header = ({ history }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useSelector(({ user }) => ({ user: user.user }));
+  const dispatch = useDispatch();
+  const onLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
+  };
+
   return (
     <Block>
       <ResponsiveWrapper>
@@ -95,6 +111,7 @@ const Header = () => {
             </Link>
           </ItemBlock>
           <ItemBlock>
+            {user && <Name>{user.username}</Name>}
             <Item className="dropdown" onClick={() => setIsOpen(!isOpen)}>
               <span>
                 <FaUserAlt size={25} />
@@ -104,7 +121,7 @@ const Header = () => {
                 <Link to="/mypage">
                   <li>프로필 설정</li>
                 </Link>
-                <li>로그아웃</li>
+                <li onClick={onLogout}>로그아웃</li>
               </DropDown>
             </Item>
           </ItemBlock>
@@ -114,4 +131,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

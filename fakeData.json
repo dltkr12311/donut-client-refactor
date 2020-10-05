@@ -1,0 +1,106 @@
+{
+  "signin": [
+    {},
+    {
+      "email": "123@sak.com",
+      "password": "555",
+      "id": 1
+    },
+    {
+      "email": "dltkr12311@naver.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "12123",
+      "id": 3
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "123123",
+      "id": 5
+    },
+    {
+      "email": "code@states.com",
+      "password": "2",
+      "id": 6
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1",
+      "id": 7
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "id": 10
+    }
+  ],
+  "signup": [
+    {
+      "email": "park@sak.com",
+      "password": "444",
+      "passwordConfirm": "444",
+      "address": "발리",
+      "username": "박코딩"
+    },
+    {
+      "email": "lee@sak.com",
+      "password": "111",
+      "passwordConfirm": "111",
+      "address": "말레이시아",
+      "username": "이코딩"
+    },
+    {
+      "id": 1,
+      "email": "park@sak.com",
+      "password": "444",
+      "passwordConfirm": "444",
+      "address": "발리",
+      "username": "박코딩"
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
+      "id": 2
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "1234",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
+      "id": 3
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "123",
+      "address": "실리콘밸리",
+      "username": "123123",
+      "id": 4
+    },
+    {
+      "email": "johnMay0829@google.com",
+      "password": "123",
+      "address": "실리콘밸리",
+      "username": "kimcoding",
+      "id": 5
+    }
+  ]
+}

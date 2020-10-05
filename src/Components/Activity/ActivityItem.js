@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import palette from '../../lib/styles/palette';
 
 const Block = styled.div`
   font-size: 1rem;
   width: calc(50% - 4.3rem);
   border-radius: 8px;
-  background: #ffc7c7;
-  border: 2px solid black;
+  background: ${palette.activity};
+  border: 2px solid rgba(0, 0, 0, 0.4);
   margin: 0.5rem;
   padding: 1.5rem;
   @media screen and (max-width: 950px) {
@@ -35,18 +36,30 @@ const TagList = styled.div`
   }
 `;
 
-const ActivityList = () => {
-  return (
+const ActivityItem = ({ id, name, intro, participationCriteria, user_info }) => {
+  return user_info ? (
     <Block>
-      <Link to={`/@작성자/sample`}>
+      <Link to={`/@${user_info.username}/${id}`}>
+        <Title>{name}</Title>
+      </Link>
+      <Author>{user_info.username}</Author>
+      <Description>{intro}</Description>
+      <Address>{user_info.latlon}</Address>
+      <TagList>
+        <div>{participationCriteria}</div>
+        <div>기술1</div>
+        <div>기술2</div>
+        <div>기술3</div>
+      </TagList>
+    </Block>
+  ) : (
+    <Block>
+      <Link to={`/@test/test`}>
         <Title>타이틀</Title>
       </Link>
       <Author>작성자</Author>
-      <Description>
-        이러한이러한활동을 하기위해서 이러한이러한 모집을 진행중입니다. 이러한 것에
-        관심있으시면 지원해주세요.
-      </Description>
-      <Address>동네주소</Address>
+      <Description>활동 소개 간략</Description>
+      <Address>위치 정보</Address>
       <TagList>
         <div>활동</div>
         <div>기술1</div>
@@ -57,4 +70,4 @@ const ActivityList = () => {
   );
 };
 
-export default ActivityList;
+export default ActivityItem;
