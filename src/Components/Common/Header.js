@@ -92,6 +92,8 @@ const Header = ({ history }) => {
   const dispatch = useDispatch();
   const onLogout = () => {
     dispatch(logout());
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('user');
   };
 
   return (

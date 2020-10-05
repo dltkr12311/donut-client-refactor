@@ -17,17 +17,13 @@ const store = createStore(
 function loadUser() {
   try {
     const user = localStorage.getItem('user');
-    console.log(user);
     if (!user) return;
-    if (user) {
-      store.dispatch(tempSetUser(user));
-      store.dispatch(check());
-    }
+    store.dispatch(tempSetUser(user));
+    store.dispatch(check());
   } catch (e) {
     console.log('localstorage is not working');
   }
 }
-
 sagaMiddleware.run(rootSaga);
 loadUser();
 

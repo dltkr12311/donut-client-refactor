@@ -1,16 +1,23 @@
 import client from './client';
+const config = {
+  headers: {
+    authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+  },
+  withCredentials: true,
+};
 
-//로그인
 export const writeActivity = ({ name, intro, skills, participation_cretira, rule }) => {
-  console.log(name, intro, skills, participation_cretira, rule);
-  return name;
-  // client.post('/api/activity/write', { name, intro, participation_cretira, rule });
+  return client.post(
+    '/activity/createActivity',
+    { name, intro, skills, participation_cretira, rule },
+    config
+  );
 };
 
 export const readActivity = ({ id }) => {
-  return client.get(`/api/activity/${id}`);
+  return client.get(`/activity/getActivityList/${id}`);
 };
 
 export const listActivity = () => {
-  return client.get(`/api/activity`);
+  return client.get(`/activity/getActivity`);
 };
